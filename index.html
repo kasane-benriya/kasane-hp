@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>実績紹介 | 便利屋KASANE</title>
+    <title>便利屋KASANE | 岡崎市・西三河の暮らしのパートナー</title>
     <style>
         :root {
             --primary-color: #e67e22; /* 親しみと温かみのある深めのオレンジ */
@@ -70,92 +70,168 @@
             padding: 40px 20px;
         }
 
-        h2 {
-            color: var(--secondary-color);
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        /* 実績カード */
-        .case-card {
+        /* セクション共通スタイル */
+        section {
             background: #ffffff;
             padding: 35px;
             margin-bottom: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--primary-color);
+        }
+        h2 {
+            color: var(--secondary-color);
+            font-size: 24px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* キャッチコピーエリア */
+        .intro-box {
+            background-color: #fff8f2;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 35px;
+        }
+        .intro-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* サービスリスト */
+        .service-group {
+            margin-bottom: 30px;
+        }
+        .service-group h3 {
+            color: var(--secondary-color);
+            font-size: 19px;
+            background-color: #f1f5f9;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .service-list li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* 実績紹介用スタイル */
+        .case-card {
+            background: #fdfdfd;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--primary-color);
         }
         .case-tag {
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
-            font-size: 12px;
-            padding: 3px 10px;
+            font-size: 11px;
+            padding: 2px 8px;
             border-radius: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
         .case-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             color: var(--secondary-color);
             margin: 0 0 15px 0;
         }
-        
-        /* 通常の1枚画像スタイル */
         .case-image {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             height: auto;
             display: block;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
             border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
-
-        /* ビフォーアフター用の2枚並びスタイル */
         .ba-container {
             display: flex;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             justify-content: center;
         }
         .ba-box {
             flex: 1;
-            max-width: 260px;
+            max-width: 220px;
             text-align: center;
-            position: relative;
         }
         .ba-box img {
             width: 100%;
             height: auto;
             border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
             display: block;
         }
         .ba-label {
             display: inline-block;
-            padding: 2px 10px;
-            font-size: 12px;
+            padding: 1px 8px;
+            font-size: 11px;
             font-weight: bold;
             border-radius: 4px;
             margin-top: 5px;
         }
         .label-before { background-color: #7f8c8d; color: white; }
         .label-after { background-color: #e67e22; color: white; }
-
         .case-box {
             background-color: #fff8f2;
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            border-left: 3px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 14.5px;
         }
-        .case-box p {
-            margin: 8px 0;
+        .case-box p { margin: 6px 0; }
+
+        /* 料金案内に関する注意書き */
+        .price-notice {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
             font-size: 15px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 25px;
+        }
+
+        /* 料金案内ミニテーブル */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .price-table th {
+            background-color: #fcfcfc;
+            color: #555;
+            width: 60%;
+        }
+        .price-table td {
+            font-weight: bold;
+            color: var(--secondary-color);
         }
 
         /* お問い合わせボタン */
@@ -163,9 +239,6 @@
             text-align: center;
             background: #ffffff;
             padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            margin-top: 40px;
         }
         .btn-phone {
             display: inline-block;
@@ -218,137 +291,45 @@
             margin-top: 50px;
         }
 
-        /* レスポンシブ対応（スマホのときは縦並びにする） */
+        /* レスポンシブ対応 */
         @media (max-width: 600px) {
             header h1 { font-size: 26px; }
             .container { padding: 20px 10px; }
-            .ba-container { flex-direction: column; align-items: center; gap: 20px; }
-            .ba-box { max-width: 100%; width: 100%; }
             section { padding: 20px; }
             .btn-phone { font-size: 20px; }
+            .ba-container { flex-direction: column; align-items: center; gap: 15px; }
+            .ba-box { max-width: 100%; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ヘッダーエリア -->
     <header>
         <h1>便利屋KASANE</h1>
         <p>〜 岡崎市・西三河エリアの暮らしの「困った」を解決 〜</p>
     </header>
 
-    <!-- ナビゲーション -->
     <nav>
-        <a href="index.html">ホーム</a>
-        <a href="works.html">実績紹介</a>
+        <a href="#services">サービス内容</a>
+        <a href="#works">作業実績</a>
+        <a href="#price">料金について</a>
+        <a href="#contact">お問い合わせ</a>
     </nav>
 
-    <!-- メインコンテンツ -->
     <div class="container">
 
-        <h2>これまでの作業実績</h2>
-        <p style="text-align: center; color: #666; font-size: 15px; margin-bottom: 40px;">岡崎市周辺でお手伝いさせていただいた事例の一部をご紹介します。</p>
-
-        <!-- 実績1：草刈り -->
-        <div class="case-card">
-            <span class="case-tag">お庭のお手入れ</span>
-            <div class="case-title">お庭全体の草刈り・集草処分</div>
-            
-            <!-- 📷 通常の1枚画像 -->
-            <img src="kusakari.jpg" alt="草刈りの様子" class="case-image" onerror="this.style.display='none'">
-
-            <div class="case-box">
-                <p><strong>【ご依頼のきっかけ】</strong> 「暖かくなって一気にお庭の雑草が伸びてしまい、自分では体力的につらいのでスッキリさせてほしい」とご相談をいただきました。</p>
-                <p><strong>【作業内容】</strong> ご自宅の周りから裏庭まで、細かい部分まで手作業で丁寧に根元から草を刈り取り、袋に詰めて処分いたしました。</p>
-                <p><strong>【お客様の声】</strong> 見違えるほど綺麗になったお庭をご覧になり、「これでしばらく安心して過ごせます、本当に助かりました」と喜んでいただけました。</p>
-            </div>
+        <div class="intro-box">
+            <h3>地域密着・親切丁寧にお応えします</h3>
+            <p>「どこに頼めばいいかわからない」「ちょっとしたことだけど手伝ってほしい」そんな時は<b>便利屋KASANE</b>にお任せください。岡崎市を中心に、フットワーク軽く皆様の日常のサポートに駆けつけます。お見積もりは完全に無料です！</p>
         </div>
 
-        <!-- 実績2：レンジフード清掃 -->
-        <div class="case-card">
-            <span class="case-tag">ハウスクリーニング</span>
-            <div class="case-title">キッチンのレンジフード（換気扇）分解清掃</div>
-            
-            <!-- 🔄 ビフォーアフターの2枚並び -->
-            <div class="ba-container">
-                <div class="ba-box">
-                    <img src="range-before.jpg" alt="清掃前のレンジフード" onerror="this.parentNode.style.display='none'">
-                    <span class="ba-label label-before">Before</span>
-                </div>
-                <div class="ba-box">
-                    <img src="range-after.jpg" alt="清掃後のレンジフード" onerror="this.parentNode.style.display='none'">
-                    <span class="ba-label label-after">After</span>
-                </div>
-            </div>
+        <section id="services">
+            <h2>サービス内容</h2>
+            <p style="color: #666; font-size: 15px; margin-bottom: 30px;">小さなお手伝いから専門的なご相談まで、幅広く柔軟に対応いたします。</p>
 
-            <div class="case-box">
-                <p><strong>【ご依頼のきっかけ】</strong> 「油汚れがギトギトになってしまい、掃除の仕方がわからない」とお悩みのお客様からのご依頼です。</p>
-                <p><strong>【作業内容】</strong> レンジフードのフィルターや内部のファンを丁寧に分解し、専用の薬剤を使用してつけ置きし、こびりついたベタベタの油汚れをすっきりと落としました。</p>
-                <p><strong>【お客様の声】</strong> 「換気扇の音も静かになった気がする（笑）綺麗になって大満足です！」と嬉しいお言葉をいただきました。</p>
-            </div>
-        </div>
-
-        <!-- 実績3：網戸の張替え -->
-        <div class="case-card">
-            <span class="case-tag">便利屋業務</span>
-            <div class="case-title">破れてしまった網戸の張替え</div>
-            
-            <!-- 📷 通常の1枚画像 -->
-            <img src="amido.jpg" alt="網戸張替えの様子" class="case-image" onerror="this.style.display='none'">
-
-            <div class="case-box">
-                <p><strong>【ご依頼のきっかけ】</strong> 「梯子をぶつけて網戸を破いてしまい、虫が入ってくるので新しく張り替えてほしい」とご依頼をいただきました。</p>
-                <p><strong>【作業内容】</strong> 現地にて網戸の枠をお預かりし、たるみやシワが出ないよう綺麗に新しい網へ張り替えを行いました。</p>
-                <p><strong>【お客様の声】</strong> 「ピンと綺麗に張ってもらえて気持ちがいいです。これで安心して窓を開けられます」とご満足いただけました。</p>
-            </div>
-        </div>
-
-        <!-- 実績4：風呂掃除 -->
-        <div class="case-card">
-            <span class="case-tag">ハウスクリーニング</span>
-            <div class="case-title">浴室（お風呂場）の徹底清掃と排水溝のつまり解消</div>
-            
-            <!-- 🔄 ビフォーアフターの2枚並び -->
-            <div class="ba-container">
-                <div class="ba-box">
-                    <img src="furo-before.jpg" alt="清掃前のお風呂" onerror="this.parentNode.style.display='none'">
-                    <span class="ba-label label-before">Before</span>
-                </div>
-                <div class="ba-box">
-                    <img src="furo-after.jpg" alt="清掃後のお風呂" onerror="this.parentNode.style.display='none'">
-                    <span class="ba-label label-after">After</span>
-                </div>
-            </div>
-
-            <div class="case-box">
-                <p><strong>【ご依頼のきっかけ】</strong> 離れて暮らすご家族からのご依頼で、「高齢のお母さんの一人暮らしの家で、自分ではお風呂掃除が行き届かなくなって困っている」とのご要望でした。</p>
-                <p><strong>【作業内容】</strong> 天井やタイルの目地、鏡やカラン（蛇口）の頑固な水垢を丁寧に磨き上げ、さらに流れが悪くなっていた排水溝のつまりもすっきり綺麗に解消いたしました。</p>
-                <p><strong>【お客様の声】</strong> 「お風呂全体が明るくなって、排水もスムーズになりました。母も喜んでいます」とご家族の方からもお礼の連絡をいただきました。</p>
-            </div>
-        </div>
-
-        <!-- お問い合わせセクション（CTA） -->
-        <section id="contact" class="cta-section">
-            <h2>「これ頼める？」と思ったら、まずはご相談ください</h2>
-            <p style="font-weight: bold; margin-bottom: 5px;">どんな小さなお悩みでも、現地確認・お見積もりは【完全無料】です。</p>
-            
-            <!-- 電話ボタン -->
-            <a href="tel:08094827277" class="btn-phone">📞 080-9482-7277</a>
-            <div class="emergency-text">緊急時はいつでもかけてくださいね（^^）</div>
-
-            <!-- メールボックス -->
-            <div class="mail-box">
-                <strong>メールでのお問い合わせ（24時間受付中）</strong><br>
-                <a href="mailto:kasaneofficial3@gmail.com">kasaneofficial3@gmail.com</a>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- フッターエリア -->
-    <footer>
-        <p>&copy; 2026 便利屋KASANE All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+            <div class="service-group">
+                <h3>① 便利屋業務（ベースサービス）</h3>
+                <ul class="service-list">
+                    <li><strong>日常のお手伝い：</strong> 電球交換、家具の組み立て・移動、網戸の張り替え、お買い物の代行</li>
+                    <li><strong>お庭のお手入れ：</strong> 草むしり、草刈り、伸びてしまった庭木の簡易的な剪定・処分</li>
+                    <li><strong>お留守番・管理：</strong> 空き家の定期巡回、お部屋の換気、ポストの郵便物整理・
