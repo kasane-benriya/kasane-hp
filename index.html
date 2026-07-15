@@ -25,21 +25,37 @@
         header {
             background-color: white;
             border-bottom: 3px solid var(--primary-color);
-            padding: 30px 20px;
+            padding: 35px 20px;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 34px;
             color: var(--secondary-color);
             letter-spacing: 2px;
             font-weight: 700;
         }
         header p {
-            margin: 5px 0 0 0;
+            margin: 5px 0 20px 0;
             font-size: 14px;
             color: #666;
             font-weight: bold;
+        }
+
+        /* プロフィール画像スタイル（丸型・ふちぼかし） */
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px 5px rgba(230, 126, 34, 0.2); /* ふちをふんわり光らせる */
+            border: 4px solid #ffffff;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         /* ナビゲーション */
@@ -52,7 +68,7 @@
             z-index: 100;
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 12px;
             text-decoration: none;
             color: #ffffff;
             font-size: 15px;
@@ -280,6 +296,43 @@
             text-decoration: none;
         }
 
+        /* SNS・外部リンクエリア */
+        .sns-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .btn-sns {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .btn-instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: white;
+        }
+        .btn-instagram:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-map {
+            background-color: #4285F4;
+            color: white;
+        }
+        .btn-map:hover {
+            background-color: #357ae8;
+            transform: translateY(-2px);
+        }
+
         /* フッター */
         footer {
             text-align: center;
@@ -304,11 +357,15 @@
 </head>
 <body>
 
+    <!-- ヘッダーエリア -->
     <header>
-        <h1>便利屋KASANE</h1>
+        <!-- プロフィールお写真（profile.jpgをアップロードすると自動反映、無ければ非表示） -->
+        <img src="profile.jpg" alt="便利屋KASANE 代表" class="profile-img" onerror="this.style.display='none'">
+        <h1 style="margin-top:15px;">便利屋KASANE</h1>
         <p>〜 岡崎市・西三河エリアの暮らしの「困った」を解決 〜</p>
     </header>
 
+    <!-- ナビゲーション -->
     <nav>
         <a href="#services">サービス内容</a>
         <a href="#works">作業実績</a>
@@ -316,58 +373,66 @@
         <a href="#contact">お問い合わせ</a>
     </nav>
 
+    <!-- メインコンテンツ -->
     <div class="container">
 
+        <!-- コンセプト紹介 -->
         <div class="intro-box">
             <h3>地域密着・親切丁寧にお応えします</h3>
             <p>「どこに頼めばいいかわからない」「ちょっとしたことだけど手伝ってほしい」そんな時は<b>便利屋KASANE</b>にお任せください。岡崎市を中心に、フットワーク軽く皆様の日常のサポートに駆けつけます。お見積もりは完全に無料です！</p>
         </div>
 
+        <!-- サービス内容セクション -->
         <section id="services">
             <h2>サービス内容</h2>
             <p style="color: #666; font-size: 15px; margin-bottom: 30px;">小さなお手伝いから専門的なご相談まで、幅広く柔軟に対応いたします。</p>
 
             <div class="service-group">
-                <h3>① 便利屋業務（ベースサービス）</h3>
+                <h3>① 便利屋業務</h3>
                 <ul class="service-list">
                     <li><strong>日常のお手伝い：</strong> 電球交換、家具の組み立て・移動、網戸の張り替え、お買い物の代行</li>
                     <li><strong>お庭のお手入れ：</strong> 草むしり、草刈り、伸びてしまった庭木の簡易的な剪定・処分</li>
-                    <li><strong>お留守番・管理：</strong> 空き家の定期巡回、お部屋の換気、ポストの郵便物整理・写真報告</li>
                 </ul>
             </div>
 
             <div class="service-group">
                 <h3>② ハウスクリーニング</h3>
                 <ul class="service-list">
-                    <li><strong>水回りの集中清掃：</strong> 自分では落とせない浴室のカビ・水垢、キッチンの油汚れ、洗面所、トイレの徹底掃除</li>
+                    <li><strong>水回りの集中清掃：</strong> レンジフード（換気扇）、お風呂掃除、トイレ掃除など、気になる部分の徹底的なカビや汚れ落とし</li>
                     <li><strong>お部屋全体の清掃：</strong> 賃貸物件の退去前の片づけ、お引越し前後のまるごと清掃、部分的な床ワックス掛け</li>
                 </ul>
             </div>
 
             <div class="service-group">
-                <h3>③ お墓の相談・お参り代行</h3>
+                <h3>③ その他サービス（お気軽にご相談ください）</h3>
                 <ul class="service-list">
-                    <li><strong>お墓参り・お掃除代行：</strong> 遠方にお住まいで行けない方に代わり、お墓の雑草除去、墓石の洗浄、お線香とお花のお供え（写真報告付き）</li>
-                    <li><strong>お墓に関するご相談：</strong> 「今後の管理が心配」「墓じまいについて悩んでいる」など、ご家族に寄り添ってお話をお伺いします</li>
+                    <li><strong>お墓の相談と供養全般：</strong> 遠方で行けない方に代わるお墓参り・お掃除代行、墓石の洗浄、また今後の管理や「墓じまい」に関するご家族に寄り添ったご相談</li>
+                    <li><strong>シニアライフのサポート：</strong> 「重い荷物を運んでほしい」「スマホの使い方がわからない」など、シニア世代のちょっとしたお困りごとに寄り添います</li>
+                    <li><strong>お話し相手・見守り：</strong> 「少し寂しいので誰かとお喋りしたい」「定期的に様子を見に来てほしい」といったご要望にも対応します</li>
+                    <li><strong>植物の管理・水やり代行：</strong> 旅行や出張などで長期間お家を留守にされる際の、大切なお庭やベランダの植物への水やりを代行いたします</li>
+                    <li><strong>その他の「困った」にも：</strong> 「こんなこと頼める？」という別ジャンルのお悩みも、まずは一度お気軽にお聞かせください！</li>
                 </ul>
             </div>
         </section>
 
+        <!-- 実績紹介セクション -->
         <section id="works">
             <h2>これまでの作業実績</h2>
             <p style="color: #666; font-size: 15px; margin-bottom: 30px;">岡崎市周辺でお手伝いさせていただいた事例の一部をご紹介します。</p>
 
+            <!-- 実績1：草刈り -->
             <div class="case-card">
                 <span class="case-tag">お庭のお手入れ</span>
-                <div class="case-title">お庭全体の草刈り・集草処分</div>
+                <div class="case-title">お庭全体の草刈り</div>
                 <img src="kusakari.jpg" alt="草刈りの様子" class="case-image" onerror="this.style.display='none'">
                 <div class="case-box">
                     <p><strong>【きっかけ】</strong> 「一気にお庭の雑草が伸びてしまい、自分では体力的につらいのでスッキリさせてほしい」とのご相談です。</p>
-                    <p><strong>【作業内容】</strong> ご自宅の周りから裏庭まで、細かい部分まで手作業で丁寧に根元から草を刈り取り、袋に詰めて処分いたしました。</p>
-                    <p><strong>【お客様の声】</strong> 見違えるほど綺麗になったお庭をご覧になり、「これでしばらく安心して過ごせます、本当に助かりました」と喜んでいただけました。</p>
+                    <p><strong>【作業内容】</strong> ご自宅の周りから裏庭まで、細かい部分まで手作業で丁寧に根元から草を刈り取りました。</p>
+                    <p><strong>【お客様の声】</strong> 見違えるほど綺麗になったお庭をご覧になり、「これでしばらく安心して過ごせる、本当に助かった」と喜んでいただけました。</p>
                 </div>
             </div>
 
+            <!-- 実績2：レンジフード清掃 -->
             <div class="case-card">
                 <span class="case-tag">ハウスクリーニング</span>
                 <div class="case-title">キッチンのレンジフード（換気扇）分解清掃</div>
@@ -388,6 +453,7 @@
                 </div>
             </div>
 
+            <!-- 実績3：網戸の張替え -->
             <div class="case-card">
                 <span class="case-tag">便利屋業務</span>
                 <div class="case-title">破れてしまった網戸の張替え</div>
@@ -399,6 +465,7 @@
                 </div>
             </div>
 
+            <!-- 実績4：風呂掃除 -->
             <div class="case-card">
                 <span class="case-tag">ハウスクリーニング</span>
                 <div class="case-title">浴室の徹底清掃と排水溝のつまり解消</div>
@@ -418,8 +485,21 @@
                     <p><strong>【お客様の声】</strong> 「お風呂全体が明るくなって、排水もスムーズになりました。母も喜んでいます」とご家族の方からもお礼の連絡をいただきました。</p>
                 </div>
             </div>
+
+            <!-- 📸 新実績5：その他サービス実績（お墓参り・植物・シニアライフ等、写真を追加可能です） -->
+            <div class="case-card">
+                <span class="case-tag">その他サービス</span>
+                <div class="case-title">お墓参り代行・お掃除作業</div>
+                <img src="other-work.jpg" alt="その他の作業実績" class="case-image" onerror="this.style.display='none'">
+                <div class="case-box">
+                    <p><strong>【きっかけ】</strong> 「遠方に住んでいてお墓の手入れができない」「お盆や彼岸に合わせて綺麗にしてお参りをしてほしい」とのご相談をいただきました。</p>
+                    <p><strong>【作業内容】</strong> 墓所周りの草取りから、墓石に傷をつけないよう丁寧に水洗い洗浄を行い、お花とお線香をお供えして丁寧にお参りをさせていただきました。</p>
+                    <p><strong>【お客様の声】</strong> 作業前後の写真をまとめたご報告をお送りし、「遠くにいてもお墓が綺麗に維持できてとてもホッとしました」と安心していただけました。</p>
+                </div>
+            </div>
         </section>
 
+        <!-- 料金セクション -->
         <section id="price">
             <h2>料金のご案内</h2>
             
@@ -435,20 +515,25 @@
                     <td>4,000円〜（目安）</td>
                 </tr>
                 <tr>
-                    <th>出張費（車で1時間以内）</th>
-                    <td>無料！</td>
+                    <th>出張費（移動30分未満エリア）</th>
+                    <td><b>無料！</b></td>
                 </tr>
                 <tr>
-                    <th>出張費（車で1時間以上の遠方エリア）</th>
-                    <td>要相談 <span style="font-size:12px; font-weight:normal; color:#666;"><br>※高速道路代＋移動費などを別途お見積もりします</span></td>
+                    <th>出張費（移動30分以上エリア）</th>
+                    <td>2,200円</td>
                 </tr>
                 <tr>
-                    <th>各種パック・専門清掃・お墓代行など</th>
+                    <th>出張費（移動1時間以上の遠方エリア）</th>
+                    <td>4,400円 ＋ 高速道路代</td>
+                </tr>
+                <tr>
+                    <th>各種パック・専門清掃・その他作業など</th>
                     <td>現地確認のうえお見積もり</td>
                 </tr>
             </table>
         </section>
 
+        <!-- お問い合わせセクション（CTA） -->
         <section id="contact" class="cta-section">
             <h2>お問い合わせ・ご相談</h2>
             <p style="font-weight: bold; margin-bottom: 5px;">お困りごとは今すぐ解決！まずはお気軽にお電話ください。</p>
@@ -461,10 +546,22 @@
                 <strong>メールでのお問い合わせ（24時間受付中）</strong><br>
                 <a href="mailto:kasaneofficial3@gmail.com">kasaneofficial3@gmail.com</a>
             </div>
+
+            <!-- 📸 インスタグラム・Googleマップへのリンクボタン -->
+            <div class="sns-links">
+                <!-- 🔗 以下の href="ここにリンク" をご自身のURLに書き換えてください -->
+                <a href="https://www.instagram.com/kasane_official/"_blank" class="btn-sns btn-instagram">
+                    📸 公式Instagram
+                </a>
+                <a href="https://share.google/XoSdgHJDZaHLQn9F0" target="_blank" class="btn-sns btn-map">
+                    📍 Googleマップで見る
+                </a>
+            </div>
         </section>
 
     </div>
 
+    <!-- フッターエリア -->
     <footer>
         <p>&copy; 2026 便利屋KASANE All Rights Reserved.</p>
     </footer>
