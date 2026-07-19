@@ -10,6 +10,7 @@
             --secondary-color: #2c3e50; /* スタイリッシュで信頼感のあるネイビー */
             --bg-color: #f8f9fa;
             --text-color: #333333;
+            --line-color: #06C755; /* LINE公式カラー */
         }
 
         body {
@@ -48,7 +49,7 @@
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 0 15px 5px rgba(230, 126, 34, 0.2); /* ふちをふんわり光らせる */
+            box-shadow: 0 0 15px 5px rgba(230, 126, 34, 0.2);
             border: 4px solid #ffffff;
             margin: 0 auto;
             display: block;
@@ -251,6 +252,47 @@
             text-align: center;
         }
 
+        /* Q&A用スタイル */
+        .qa-item {
+            margin-bottom: 25px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 20px;
+        }
+        .qa-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .qa-q {
+            font-weight: bold;
+            font-size: 17px;
+            color: var(--primary-color);
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .qa-q::before {
+            content: "Q.";
+            color: var(--primary-color);
+            font-size: 20px;
+            line-height: 1;
+        }
+        .qa-a {
+            font-size: 15.5px;
+            display: flex;
+            gap: 10px;
+            padding-left: 5px;
+        }
+        .qa-a::before {
+            content: "A.";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1;
+        }
+        .qa-a-text {
+            flex: 1;
+        }
+
         /* お問い合わせボタン */
         .cta-section {
             text-align: center;
@@ -269,7 +311,7 @@
             font-weight: bold;
             font-size: 24px;
             border-radius: 50px;
-            margin: 15px 0;
+            margin: 10px 0;
             box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
             transition: all 0.3s ease;
         }
@@ -277,6 +319,29 @@
             background-color: #27ae60;
             transform: translateY(-2px);
         }
+        
+        /* LINEボタン */
+        .btn-line {
+            display: inline-block;
+            width: 100%;
+            max-width: 450px;
+            background-color: var(--line-color);
+            color: white;
+            text-align: center;
+            padding: 18px 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 50px;
+            margin: 10px 0 20px 0;
+            box-shadow: 0 4px 6px rgba(6, 199, 85, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-line:hover {
+            background-color: #05b34c;
+            transform: translateY(-2px);
+        }
+
         .emergency-text {
             color: #e74c3c;
             font-weight: bold;
@@ -354,6 +419,7 @@
             .container { padding: 20px 10px; }
             section { padding: 20px; }
             .btn-phone { font-size: 20px; }
+            .btn-line { font-size: 19px; }
             .ba-container { flex-direction: column; align-items: center; gap: 15px; }
             .ba-box { max-width: 100%; width: 100%; }
             .btn-sns { max-width: 100%; }
@@ -364,7 +430,6 @@
 
     <!-- ヘッダーエリア -->
     <header>
-        <!-- プロフィールお写真（profile.jpgをアップロードすると自動反映、無ければ非表示） -->
         <img src="profile.jpg" alt="便利屋KASANE 代表" class="profile-img" onerror="this.style.display='none'">
         <h1 style="margin-top:15px;">便利屋KASANE</h1>
         <p>〜 岡崎市・西三河エリアの暮らしの「困った」を解決 〜</p>
@@ -375,6 +440,7 @@
         <a href="#services">サービス内容</a>
         <a href="#works">作業実績</a>
         <a href="#price">料金について</a>
+        <a href="#qa">よくある質問</a>
         <a href="#contact">お問い合わせ</a>
     </nav>
 
@@ -425,7 +491,6 @@
             <h2>これまでの作業実績</h2>
             <p style="color: #666; font-size: 15px; margin-bottom: 30px;">岡崎市周辺でお手伝いさせていただいた事例の一部をご紹介します。</p>
 
-            <!-- 実績1：草刈り（処分などの文言をきれいにカットしました） -->
             <div class="case-card">
                 <span class="case-tag">お庭のお手入れ</span>
                 <div class="case-title">お庭全体の草刈り</div>
@@ -437,7 +502,6 @@
                 </div>
             </div>
 
-            <!-- 実績2：レンジフード清掃 -->
             <div class="case-card">
                 <span class="case-tag">ハウスクリーニング</span>
                 <div class="case-title">キッチンのレンジフード（換気扇）分解清掃</div>
@@ -453,12 +517,11 @@
                 </div>
                 <div class="case-box">
                     <p><strong>【きっかけ】</strong> 「油汚れがギトギトになってしまい、掃除の仕方がわからない」とお悩みのお客様からのご依頼です。</p>
-                    <p><strong>【作業内容】</strong> レンジフードのフィルターや内部のファンを丁寧に分解し、専用 of 薬剤を使用してつけ置きし、こびりついたベタベタの油汚れをすっきりと落としました。</p>
+                    <p><strong>【作業内容】</strong> レンジフードのフィルターや内部のファンを丁寧に分解し、専用の薬剤を使用してつけ置きし、こびりついたベタベタの油汚れをすっきりと落としました。</p>
                     <p><strong>【お客様の声】</strong> 「換気扇の音も静かになった気がする（笑）綺麗になって大満足です！」と嬉しいお言葉をいただきました。</p>
                 </div>
             </div>
 
-            <!-- 実績3：網戸の張替え -->
             <div class="case-card">
                 <span class="case-tag">便利屋業務</span>
                 <div class="case-title">破れてしまった網戸の張替え</div>
@@ -470,17 +533,16 @@
                 </div>
             </div>
 
-            <!-- 実績4：風呂掃除 -->
             <div class="case-card">
                 <span class="case-tag">ハウスクリーニング</span>
                 <div class="case-title">浴室の徹底清掃と排水溝のつまり解消</div>
                 <div class="ba-container">
                     <div class="ba-box">
-                        <img src="furo-before.jpg" alt="清掃前のお風呂" onerror="this.parentNode.style.display='none'">
+                        <img src="furo-before.jpg" alt="清を開く前のお風呂" onerror="this.parentNode.style.display='none'">
                         <span class="ba-label label-before">Before</span>
                     </div>
                     <div class="ba-box">
-                        <img src="furo-after.jpg" alt="清掃後のお風呂" onerror="this.parentNode.style.display='none'">
+                        <img src="furo-after.jpg" alt="清を開いた後のお風呂" onerror="this.parentNode.style.display='none'">
                         <span class="ba-label label-after">After</span>
                     </div>
                 </div>
@@ -526,21 +588,105 @@
             </table>
         </section>
 
+        <!-- よくある質問セクション（Q&A） -->
+        <section id="qa">
+            <h2>よくある質問（Q&A）</h2>
+            
+            <div class="qa-item">
+                <div class="qa-q">見積もりは本当に無料ですか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        はい、移動30分圏内のお客様であれば<b>現地確認・お見積もりは完全に無料</b>です！それ以上の遠方エリアの方のみ、出張料（料金表に記載）をいただいております。<br>
+                        なお、現在の状況がわかるお写真をLINEでお送りいただければ、現地に行かずに<b>オンラインでのお見積もりも可能</b>です。ぜひお気軽に公式LINEからお写真をお送りください！
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">当日になって追加料金が発生することはありますか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        基本的にはお見積もり時の金額で作業いたしますが、現場の状況（予想以上の詰まりや追加の作業ご要望など）によっては変動する場合もございます。ただし、<b>お客様の合意なしに当日勝手に追加請求をすることは絶対にありません</b>のでご安心ください。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">限られた予算内で作業をお願いすることはできますか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        もちろんです！あらかじめご予算をお伝えいただければ、その範囲内でできる最適な作業プランをご提案させていただきます。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">支払いはいつ、どのような方法がありますか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        作業がすべて終了し、仕上がりにお客様がご納得いただいた後にお支払いとなります。お支払い方法は、<b>当日現金での手渡し</b>、または<b>後日の銀行口座振り込み</b>をお願いしております。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">急ぎなのですが、即日対応は可能ですか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        スケジュールが空いていれば、<b>最短でその日のうちに駆けつけます！</b> 日中が埋まっている場合でも「夜の時間帯なら空いている」ということも多いので、まずは一度お電話等でご相談ください。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">土日祝日や、深夜・早朝の作業も頼めますか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        はい、喜んで対応いたします！曜日や時間帯は全く気にせずご相談ください。過去には<b>「夜11時に家の中に大きな虫が出て困っている！」というお電話をいただき、すぐに退治に駆けつけたこと</b>もございます（笑）。困ったときはいつでも頼ってくださいね。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">作業中、ずっと家にいなくてはいけませんか？（外出可能ですか？）</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        作業中にお留守にされても<b>全く問題ありません！</b> 原則として、作業の前後には内容のすり合わせと最終確認をしていただいておりますが、「終了後の確認は写真での報告でOK」という形であれば、作業中から終了まで完全にお出かけいただいても大丈夫です。
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-q">ホームページに載っていない、変わった内容でも相談していいですか？</div>
+                <div class="qa-a">
+                    <div class="qa-a-text">
+                        もちろんです！大歓迎いたします。「こんなこと便利屋さんに頼めるのかな？」と思うような少し変わったご相談でも、どしどしお気軽にお寄せください（笑）。皆様の暮らしのパートナーとして柔軟にお応えします。
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- お問い合わせセクション（CTA） -->
         <section id="contact" class="cta-section">
             <h2>お問い合わせ・ご相談</h2>
-            <p style="font-weight: bold; margin-bottom: 5px;">お困りごとは今すぐ解決！まずはお気軽にお電話ください。</p>
+            <p style="font-weight: bold; margin-bottom: 5px;">お困りごとは今すぐ解決！まずはお気軽にお電話またはLINEでお問い合わせください。</p>
             <p style="color: #666; margin-top: 0; font-size: 14px;">※作業中などで出られない場合は、折り返し連絡いたします。</p>
             
+            <!-- 電話ボタン -->
             <a href="tel:08094827277" class="btn-phone">📞 080-9482-7277</a>
             <div class="emergency-text">緊急時はいつでもかけてくださいね（^^）</div>
+
+            <!-- 公式LINEボタン（href="〜" の中にご自身のLINEのURLを入れてください） -->
+            <a href="https://line.me/R/ti/p/ご自身のLINEのIDやURL" target="_blank" class="btn-line">
+                💚 公式LINEで無料相談・写真見積もり
+            </a>
 
             <div class="mail-box">
                 <strong>メールでのお問い合わせ（24時間受付中）</strong><br>
                 <a href="mailto:kasaneofficial3@gmail.com">kasaneofficial3@gmail.com</a>
             </div>
 
-            <!-- インスタグラム・Googleマップへのリンクボタン -->
+            <!-- SNS・外部リンクエリア -->
             <div class="sns-links">
                 <!-- 🔗 以下の href="〜" の部分を、お時間ある際にご自身の本物のURLに書き換えてください -->
                 <a href="https://instagram.com/ご自身のユーザー名" target="_blank" class="btn-sns btn-instagram">
