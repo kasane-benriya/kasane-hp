@@ -25,7 +25,7 @@
         header {
             background-color: white;
             border-bottom: 3px solid var(--primary-color);
-            padding: 35px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         header h1 {
@@ -36,7 +36,7 @@
             font-weight: 700;
         }
         header p {
-            margin: 5px 0 20px 0;
+            margin: 5px 0 25px 0;
             font-size: 14px;
             color: #666;
             font-weight: bold;
@@ -120,7 +120,7 @@
 
         /* サービスリスト */
         .service-group {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         .service-group h3 {
             color: var(--secondary-color);
@@ -139,7 +139,7 @@
         .service-list li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-size: 16px;
         }
         .service-list li::before {
@@ -153,7 +153,7 @@
         .case-card {
             background: #fdfdfd;
             padding: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-radius: 6px;
             border: 1px solid #e2e8f0;
             border-left: 4px solid var(--primary-color);
@@ -165,7 +165,7 @@
             font-size: 11px;
             padding: 2px 8px;
             border-radius: 4px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: bold;
         }
         .case-title {
@@ -179,14 +179,14 @@
             max-width: 450px;
             height: auto;
             display: block;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 20px auto;
             border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
         .ba-container {
             display: flex;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             justify-content: center;
         }
         .ba-box {
@@ -238,16 +238,17 @@
         .price-table th, .price-table td {
             border: 1px solid #e2e8f0;
             padding: 12px;
-            text-align: left;
         }
         .price-table th {
             background-color: #fcfcfc;
             color: #555;
-            width: 60%;
+            width: 55%;
+            text-align: left;
         }
         .price-table td {
             font-weight: bold;
             color: var(--secondary-color);
+            text-align: center;
         }
 
         /* お問い合わせボタン */
@@ -300,21 +301,24 @@
         .sns-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 15px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
         .btn-sns {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            padding: 12px 24px;
+            width: 100%;
+            max-width: 210px;
+            padding: 14px 0;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
             font-size: 15px;
             transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
         .btn-instagram {
             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
@@ -352,6 +356,7 @@
             .btn-phone { font-size: 20px; }
             .ba-container { flex-direction: column; align-items: center; gap: 15px; }
             .ba-box { max-width: 100%; width: 100%; }
+            .btn-sns { max-width: 100%; }
         }
     </style>
 </head>
@@ -420,7 +425,7 @@
             <h2>これまでの作業実績</h2>
             <p style="color: #666; font-size: 15px; margin-bottom: 30px;">岡崎市周辺でお手伝いさせていただいた事例の一部をご紹介します。</p>
 
-            <!-- 実績1：草刈り -->
+            <!-- 実績1：草刈り（処分などの文言をきれいにカットしました） -->
             <div class="case-card">
                 <span class="case-tag">お庭のお手入れ</span>
                 <div class="case-title">お庭全体の草刈り</div>
@@ -448,7 +453,7 @@
                 </div>
                 <div class="case-box">
                     <p><strong>【きっかけ】</strong> 「油汚れがギトギトになってしまい、掃除の仕方がわからない」とお悩みのお客様からのご依頼です。</p>
-                    <p><strong>【作業内容】</strong> レンジフードのフィルターや内部のファンを丁寧に分解し、専用の薬剤を使用してつけ置きし、こびりついたベタベタの油汚れをすっきりと落としました。</p>
+                    <p><strong>【作業内容】</strong> レンジフードのフィルターや内部のファンを丁寧に分解し、専用 of 薬剤を使用してつけ置きし、こびりついたベタベタの油汚れをすっきりと落としました。</p>
                     <p><strong>【お客様の声】</strong> 「換気扇の音も静かになった気がする（笑）綺麗になって大満足です！」と嬉しいお言葉をいただきました。</p>
                 </div>
             </div>
@@ -485,18 +490,6 @@
                     <p><strong>【お客様の声】</strong> 「お風呂全体が明るくなって、排水もスムーズになりました。母も喜んでいます」とご家族の方からもお礼の連絡をいただきました。</p>
                 </div>
             </div>
-
-            <!-- 📸 新実績5：その他サービス実績（お墓参り・植物・シニアライフ等、写真を追加可能です） -->
-            <div class="case-card">
-                <span class="case-tag">その他サービス</span>
-                <div class="case-title">お墓参り代行・お掃除作業</div>
-                <img src="other-work.jpg" alt="その他の作業実績" class="case-image" onerror="this.style.display='none'">
-                <div class="case-box">
-                    <p><strong>【きっかけ】</strong> 「遠方に住んでいてお墓の手入れができない」「お盆や彼岸に合わせて綺麗にしてお参りをしてほしい」とのご相談をいただきました。</p>
-                    <p><strong>【作業内容】</strong> 墓所周りの草取りから、墓石に傷をつけないよう丁寧に水洗い洗浄を行い、お花とお線香をお供えして丁寧にお参りをさせていただきました。</p>
-                    <p><strong>【お客様の声】</strong> 作業前後の写真をまとめたご報告をお送りし、「遠くにいてもお墓が綺麗に維持できてとてもホッとしました」と安心していただけました。</p>
-                </div>
-            </div>
         </section>
 
         <!-- 料金セクション -->
@@ -516,7 +509,7 @@
                 </tr>
                 <tr>
                     <th>出張費（移動30分未満エリア）</th>
-                    <td><b>無料！</b></td>
+                    <td>無料！</td>
                 </tr>
                 <tr>
                     <th>出張費（移動30分以上エリア）</th>
@@ -537,7 +530,7 @@
         <section id="contact" class="cta-section">
             <h2>お問い合わせ・ご相談</h2>
             <p style="font-weight: bold; margin-bottom: 5px;">お困りごとは今すぐ解決！まずはお気軽にお電話ください。</p>
-            <p style="color: #666; margin-top: 0; font-size: 14px;">※作業中などで出られない場合は、折り返しご連絡いたします。</p>
+            <p style="color: #666; margin-top: 0; font-size: 14px;">※作業中などで出られない場合は、折り返し連絡いたします。</p>
             
             <a href="tel:08094827277" class="btn-phone">📞 080-9482-7277</a>
             <div class="emergency-text">緊急時はいつでもかけてくださいね（^^）</div>
@@ -547,13 +540,13 @@
                 <a href="mailto:kasaneofficial3@gmail.com">kasaneofficial3@gmail.com</a>
             </div>
 
-            <!-- 📸 インスタグラム・Googleマップへのリンクボタン -->
+            <!-- インスタグラム・Googleマップへのリンクボタン -->
             <div class="sns-links">
-                <!-- 🔗 以下の href="ここにリンク" をご自身のURLに書き換えてください -->
-                <a href="https://www.instagram.com/kasane_official/"_blank" class="btn-sns btn-instagram">
+                <!-- 🔗 以下の href="〜" の部分を、お時間ある際にご自身の本物のURLに書き換えてください -->
+                <a href="https://instagram.com/ご自身のユーザー名" target="_blank" class="btn-sns btn-instagram">
                     📸 公式Instagram
                 </a>
-                <a href="https://share.google/XoSdgHJDZaHLQn9F0" target="_blank" class="btn-sns btn-map">
+                <a href="https://maps.google.com/?q=ご自身の店舗住所またはマイビジネスURL" target="_blank" class="btn-sns btn-map">
                     📍 Googleマップで見る
                 </a>
             </div>
